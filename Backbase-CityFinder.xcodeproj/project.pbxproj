@@ -1,0 +1,591 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		523F0E25218BEFFB005C5F04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F0E24218BEFFB005C5F04 /* AppDelegate.swift */; };
+		523F0E27218BEFFB005C5F04 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F0E26218BEFFB005C5F04 /* ViewController.swift */; };
+		523F0E2A218BEFFB005C5F04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 523F0E28218BEFFB005C5F04 /* Main.storyboard */; };
+		523F0E2C218BEFFD005C5F04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 523F0E2B218BEFFD005C5F04 /* Assets.xcassets */; };
+		523F0E2F218BEFFD005C5F04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 523F0E2D218BEFFD005C5F04 /* LaunchScreen.storyboard */; };
+		523F0E3A218BEFFD005C5F04 /* Backbase_CityFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F0E39218BEFFD005C5F04 /* Backbase_CityFinderTests.swift */; };
+		523F0E45218BEFFD005C5F04 /* Backbase_CityFinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F0E44218BEFFD005C5F04 /* Backbase_CityFinderUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		523F0E36218BEFFD005C5F04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 523F0E19218BEFFB005C5F04 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 523F0E20218BEFFB005C5F04;
+			remoteInfo = "Backbase-CityFinder";
+		};
+		523F0E41218BEFFD005C5F04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 523F0E19218BEFFB005C5F04 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 523F0E20218BEFFB005C5F04;
+			remoteInfo = "Backbase-CityFinder";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		523F0E21218BEFFB005C5F04 /* Backbase-CityFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Backbase-CityFinder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		523F0E24218BEFFB005C5F04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		523F0E26218BEFFB005C5F04 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		523F0E29218BEFFB005C5F04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		523F0E2B218BEFFD005C5F04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		523F0E2E218BEFFD005C5F04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		523F0E30218BEFFD005C5F04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		523F0E35218BEFFD005C5F04 /* Backbase-CityFinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Backbase-CityFinderTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		523F0E39218BEFFD005C5F04 /* Backbase_CityFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backbase_CityFinderTests.swift; sourceTree = "<group>"; };
+		523F0E3B218BEFFD005C5F04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		523F0E40218BEFFD005C5F04 /* Backbase-CityFinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Backbase-CityFinderUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		523F0E44218BEFFD005C5F04 /* Backbase_CityFinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backbase_CityFinderUITests.swift; sourceTree = "<group>"; };
+		523F0E46218BEFFD005C5F04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		523F0E1E218BEFFB005C5F04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		523F0E32218BEFFD005C5F04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		523F0E3D218BEFFD005C5F04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		523F0E18218BEFFB005C5F04 = {
+			isa = PBXGroup;
+			children = (
+				523F0E23218BEFFB005C5F04 /* Backbase-CityFinder */,
+				523F0E38218BEFFD005C5F04 /* Backbase-CityFinderTests */,
+				523F0E43218BEFFD005C5F04 /* Backbase-CityFinderUITests */,
+				523F0E22218BEFFB005C5F04 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		523F0E22218BEFFB005C5F04 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				523F0E21218BEFFB005C5F04 /* Backbase-CityFinder.app */,
+				523F0E35218BEFFD005C5F04 /* Backbase-CityFinderTests.xctest */,
+				523F0E40218BEFFD005C5F04 /* Backbase-CityFinderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		523F0E23218BEFFB005C5F04 /* Backbase-CityFinder */ = {
+			isa = PBXGroup;
+			children = (
+				523F0E24218BEFFB005C5F04 /* AppDelegate.swift */,
+				523F0E26218BEFFB005C5F04 /* ViewController.swift */,
+				523F0E28218BEFFB005C5F04 /* Main.storyboard */,
+				523F0E2B218BEFFD005C5F04 /* Assets.xcassets */,
+				523F0E2D218BEFFD005C5F04 /* LaunchScreen.storyboard */,
+				523F0E30218BEFFD005C5F04 /* Info.plist */,
+			);
+			path = "Backbase-CityFinder";
+			sourceTree = "<group>";
+		};
+		523F0E38218BEFFD005C5F04 /* Backbase-CityFinderTests */ = {
+			isa = PBXGroup;
+			children = (
+				523F0E39218BEFFD005C5F04 /* Backbase_CityFinderTests.swift */,
+				523F0E3B218BEFFD005C5F04 /* Info.plist */,
+			);
+			path = "Backbase-CityFinderTests";
+			sourceTree = "<group>";
+		};
+		523F0E43218BEFFD005C5F04 /* Backbase-CityFinderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				523F0E44218BEFFD005C5F04 /* Backbase_CityFinderUITests.swift */,
+				523F0E46218BEFFD005C5F04 /* Info.plist */,
+			);
+			path = "Backbase-CityFinderUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		523F0E20218BEFFB005C5F04 /* Backbase-CityFinder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 523F0E49218BEFFD005C5F04 /* Build configuration list for PBXNativeTarget "Backbase-CityFinder" */;
+			buildPhases = (
+				523F0E1D218BEFFB005C5F04 /* Sources */,
+				523F0E1E218BEFFB005C5F04 /* Frameworks */,
+				523F0E1F218BEFFB005C5F04 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Backbase-CityFinder";
+			productName = "Backbase-CityFinder";
+			productReference = 523F0E21218BEFFB005C5F04 /* Backbase-CityFinder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		523F0E34218BEFFD005C5F04 /* Backbase-CityFinderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 523F0E4C218BEFFD005C5F04 /* Build configuration list for PBXNativeTarget "Backbase-CityFinderTests" */;
+			buildPhases = (
+				523F0E31218BEFFD005C5F04 /* Sources */,
+				523F0E32218BEFFD005C5F04 /* Frameworks */,
+				523F0E33218BEFFD005C5F04 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				523F0E37218BEFFD005C5F04 /* PBXTargetDependency */,
+			);
+			name = "Backbase-CityFinderTests";
+			productName = "Backbase-CityFinderTests";
+			productReference = 523F0E35218BEFFD005C5F04 /* Backbase-CityFinderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		523F0E3F218BEFFD005C5F04 /* Backbase-CityFinderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 523F0E4F218BEFFD005C5F04 /* Build configuration list for PBXNativeTarget "Backbase-CityFinderUITests" */;
+			buildPhases = (
+				523F0E3C218BEFFD005C5F04 /* Sources */,
+				523F0E3D218BEFFD005C5F04 /* Frameworks */,
+				523F0E3E218BEFFD005C5F04 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				523F0E42218BEFFD005C5F04 /* PBXTargetDependency */,
+			);
+			name = "Backbase-CityFinderUITests";
+			productName = "Backbase-CityFinderUITests";
+			productReference = 523F0E40218BEFFD005C5F04 /* Backbase-CityFinderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		523F0E19218BEFFB005C5F04 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Paolo Di Lorenzo";
+				TargetAttributes = {
+					523F0E20218BEFFB005C5F04 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					523F0E34218BEFFD005C5F04 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 523F0E20218BEFFB005C5F04;
+					};
+					523F0E3F218BEFFD005C5F04 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 523F0E20218BEFFB005C5F04;
+					};
+				};
+			};
+			buildConfigurationList = 523F0E1C218BEFFB005C5F04 /* Build configuration list for PBXProject "Backbase-CityFinder" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 523F0E18218BEFFB005C5F04;
+			productRefGroup = 523F0E22218BEFFB005C5F04 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				523F0E20218BEFFB005C5F04 /* Backbase-CityFinder */,
+				523F0E34218BEFFD005C5F04 /* Backbase-CityFinderTests */,
+				523F0E3F218BEFFD005C5F04 /* Backbase-CityFinderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		523F0E1F218BEFFB005C5F04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				523F0E2F218BEFFD005C5F04 /* LaunchScreen.storyboard in Resources */,
+				523F0E2C218BEFFD005C5F04 /* Assets.xcassets in Resources */,
+				523F0E2A218BEFFB005C5F04 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		523F0E33218BEFFD005C5F04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		523F0E3E218BEFFD005C5F04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		523F0E1D218BEFFB005C5F04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				523F0E27218BEFFB005C5F04 /* ViewController.swift in Sources */,
+				523F0E25218BEFFB005C5F04 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		523F0E31218BEFFD005C5F04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				523F0E3A218BEFFD005C5F04 /* Backbase_CityFinderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		523F0E3C218BEFFD005C5F04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				523F0E45218BEFFD005C5F04 /* Backbase_CityFinderUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		523F0E37218BEFFD005C5F04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 523F0E20218BEFFB005C5F04 /* Backbase-CityFinder */;
+			targetProxy = 523F0E36218BEFFD005C5F04 /* PBXContainerItemProxy */;
+		};
+		523F0E42218BEFFD005C5F04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 523F0E20218BEFFB005C5F04 /* Backbase-CityFinder */;
+			targetProxy = 523F0E41218BEFFD005C5F04 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		523F0E28218BEFFB005C5F04 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				523F0E29218BEFFB005C5F04 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		523F0E2D218BEFFD005C5F04 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				523F0E2E218BEFFD005C5F04 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		523F0E47218BEFFD005C5F04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		523F0E48218BEFFD005C5F04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		523F0E4A218BEFFD005C5F04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UNCTHE43HQ;
+				INFOPLIST_FILE = "Backbase-CityFinder/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.paolo.Backbase-CityFinder";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		523F0E4B218BEFFD005C5F04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UNCTHE43HQ;
+				INFOPLIST_FILE = "Backbase-CityFinder/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.paolo.Backbase-CityFinder";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		523F0E4D218BEFFD005C5F04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UNCTHE43HQ;
+				INFOPLIST_FILE = "Backbase-CityFinderTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.paolo.Backbase-CityFinderTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Backbase-CityFinder.app/Backbase-CityFinder";
+			};
+			name = Debug;
+		};
+		523F0E4E218BEFFD005C5F04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UNCTHE43HQ;
+				INFOPLIST_FILE = "Backbase-CityFinderTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.paolo.Backbase-CityFinderTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Backbase-CityFinder.app/Backbase-CityFinder";
+			};
+			name = Release;
+		};
+		523F0E50218BEFFD005C5F04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UNCTHE43HQ;
+				INFOPLIST_FILE = "Backbase-CityFinderUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.paolo.Backbase-CityFinderUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Backbase-CityFinder";
+			};
+			name = Debug;
+		};
+		523F0E51218BEFFD005C5F04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UNCTHE43HQ;
+				INFOPLIST_FILE = "Backbase-CityFinderUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.paolo.Backbase-CityFinderUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Backbase-CityFinder";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		523F0E1C218BEFFB005C5F04 /* Build configuration list for PBXProject "Backbase-CityFinder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				523F0E47218BEFFD005C5F04 /* Debug */,
+				523F0E48218BEFFD005C5F04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		523F0E49218BEFFD005C5F04 /* Build configuration list for PBXNativeTarget "Backbase-CityFinder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				523F0E4A218BEFFD005C5F04 /* Debug */,
+				523F0E4B218BEFFD005C5F04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		523F0E4C218BEFFD005C5F04 /* Build configuration list for PBXNativeTarget "Backbase-CityFinderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				523F0E4D218BEFFD005C5F04 /* Debug */,
+				523F0E4E218BEFFD005C5F04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		523F0E4F218BEFFD005C5F04 /* Build configuration list for PBXNativeTarget "Backbase-CityFinderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				523F0E50218BEFFD005C5F04 /* Debug */,
+				523F0E51218BEFFD005C5F04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 523F0E19218BEFFB005C5F04 /* Project object */;
+}
