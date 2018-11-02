@@ -8,9 +8,13 @@
 
 import UIKit
 
-class CityListViewController: UIViewController {
+class CityListViewController: UITableViewController {
+    
+    private static var reuseIdentifier = "cityListTableViewCell"
 
     private var fileProvider: FileProvider
+    
+    private var cities = [City]()
     
     // MARK: - Initializer
     
@@ -29,16 +33,37 @@ class CityListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: CityListViewController.reuseIdentifier)
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        title = "City Finder"
+        
         do {
             guard let data = try fileProvider.contents() else {
                 fatalError("Data not found.")
             }
             
-            let cities = try JSONDecoder().decode([City].self, from: data)
-            print(cities.count)
+            cities = try JSONDecoder().decode([City].self, from: data).sorted { $0.name < $1.name }
+            tableView.reloadData()
         } catch {
             print(error.localizedDescription)
         }
+    }
+    
+    // MARK: - UITableViewDelegate
+    
+    // MARK: - UITableViewDataSource
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cities.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: CityListViewController.reuseIdentifier, for: indexPath)
+        
+        cell.textLabel?.text = "\(cities[indexPath.row].name), \(cities[indexPath.row].country)"
+        
+        return cell
     }
 
 
