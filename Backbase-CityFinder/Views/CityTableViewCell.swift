@@ -26,6 +26,8 @@ class CityTableViewCell: UITableViewCell {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 24)
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.75
         return label
     }()
     
@@ -67,6 +69,7 @@ class CityTableViewCell: UITableViewCell {
         
         contentView.addSubview(cityLabel)
         cityLabel.leadingAnchor.constraint(equalTo: flagLabel.trailingAnchor, constant: padding).isActive = true
+        cityLabel.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: -padding).isActive = true
         cityLabel.centerYAnchor.constraint(equalTo: flagLabel.centerYAnchor).isActive = true
         
         contentView.addSubview(coordsLabel)

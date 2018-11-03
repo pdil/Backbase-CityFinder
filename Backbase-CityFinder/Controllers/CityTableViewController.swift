@@ -74,6 +74,7 @@ class CityTableViewController: UITableViewController {
         searchController.searchResultsUpdater = self
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.obscuresBackgroundDuringPresentation = false
+        definesPresentationContext = true
         
         if #available(iOS 11.0, *) {
             navigationItem.searchController = searchController
@@ -94,7 +95,16 @@ class CityTableViewController: UITableViewController {
                     return
                 }
                 
-                let decodedCities = try JSONDecoder().decode([City].self, from: data).sorted { $0.name < $1.name }
+                let decodedCities = try JSONDecoder().decode([City].self, from: data).sorted {
+                    // If names are not the same, sort by city name.
+                    if $0.name != $1.name {
+                        return $0.name < $1.name
+                    // otherwise sort by country (if names are the same).
+                    } else {
+                        return $0.country < $1.country
+                    }
+                }
+                
                 self.cityViewModels = decodedCities.map { CityViewModel(city: $0) }
                 self.filteredCityViewModels = self.cityViewModels
                 

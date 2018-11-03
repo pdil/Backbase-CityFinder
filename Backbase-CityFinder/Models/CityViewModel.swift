@@ -20,7 +20,7 @@ struct CityViewModel {
     }
     
     var displayFlag: String {
-        return "🇺🇸"
+        return emojiFlags[city.country] ?? ""
     }
     
     var displayName: String {
@@ -33,7 +33,6 @@ struct CityViewModel {
     }
     
     func configuredCell(for tableView: UITableView, at indexPath: IndexPath) -> CityTableViewCell {
-
         let cell = tableView.dequeueReusableCell(withIdentifier: CityViewModel.reuseIdentifier, for: indexPath) as! CityTableViewCell
         
         cell.flagLabel.text = displayFlag
