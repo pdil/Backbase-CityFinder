@@ -11,7 +11,8 @@ import MapKit
 
 class MapViewController: UIViewController {
     
-    private let mapRegionSize: CLLocationDistance = 3200
+    /// Size of centered map view in meters
+    private let mapRegionSize: CLLocationDistance = 4000
     
     // MARK: - Properties
     
@@ -19,7 +20,7 @@ class MapViewController: UIViewController {
     
     // MARK: - Subviews
     
-    private var mapView = MKMapView()
+    private var mapView: MKMapView?
     
     // MARK: - Initializer
     
@@ -44,17 +45,16 @@ class MapViewController: UIViewController {
             UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         ]
         
-        setupViews()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        setupMapView()
         centerMap()
     }
     
     // MARK: - Convenience
     
-    private func setupViews() {
+    private func setupMapView() {
+        mapView = MKMapView()
+        guard let mapView = mapView else { return }
+        
         view.addSubview(mapView)
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
@@ -65,7 +65,7 @@ class MapViewController: UIViewController {
     
     @objc private func centerMap() {
         let region = MKCoordinateRegion(center: city.coordinates, latitudinalMeters: mapRegionSize, longitudinalMeters: mapRegionSize)
-        mapView.setRegion(region, animated: true)
+        mapView?.setRegion(region, animated: true)
     }
 
 }
