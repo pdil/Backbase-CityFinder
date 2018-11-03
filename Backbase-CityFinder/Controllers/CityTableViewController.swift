@@ -17,6 +17,22 @@ class CityTableViewController: UITableViewController {
     
     private var cityViewModels = [CityViewModel]() {
         didSet {
+            let countLabel = UILabel()
+            countLabel.font = .boldSystemFont(ofSize: 14)
+            
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .decimal
+            
+            if let formattedCount = formatter.string(from: NSNumber(value: cityViewModels.count)) {
+                countLabel.text = "Displaying \(formattedCount) cities"
+            }
+            
+            toolbarItems = [
+                UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
+                UIBarButtonItem(customView: countLabel),
+                UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+            ]
+            
             citySearcher = CitySearcher(cities: cityViewModels.map { $0.city }, searchCompletion: searchResultsUpdated)
         }
     }
@@ -51,15 +67,19 @@ class CityTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(CityTableViewCell.self, forCellReuseIdentifier: CityViewModel.reuseIdentifier)
-        tableView.estimatedRowHeight = 64
-        tableView.rowHeight = UITableView.automaticDimension
-        
+        setupTableView()
         setupNavigationBar()
         fetchData()
     }
     
     // MARK: - Convenience
+    
+    private func setupTableView() {
+        tableView.register(CityTableViewCell.self, forCellReuseIdentifier: CityViewModel.reuseIdentifier)
+        tableView.estimatedRowHeight = 64
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.tableFooterView = UIView()            // remove empty cell separator lines
+    }
     
     private func setupNavigationBar() {
         title = "City Finder"
@@ -78,17 +98,26 @@ class CityTableViewController: UITableViewController {
         
         if #available(iOS 11.0, *) {
             navigationItem.searchController = searchController
+            navigationItem.hidesSearchBarWhenScrolling = false
         } else {
             tableView.tableHeaderView = searchController.searchBar
         }
     }
     
     private func fetchData() {
+        func cleanUp() {
+            navigationItem.prompt = nil
+            loadingActivityIndicatorView.stopAnimating()
+        }
+        
         loadingActivityIndicatorView.startAnimating()
+        navigationItem.prompt = "Loading city data..."
+        
         DispatchQueue.global(qos: .userInitiated).async {
             do {
                 guard let data = try self.fileProvider.contents() else {
                     DispatchQueue.main.async {
+                        cleanUp()
                         self.displayError(message: "Data not found.")
                     }
                     
@@ -105,14 +134,14 @@ class CityTableViewController: UITableViewController {
                     }
                 }
                 
-                self.cityViewModels = decodedCities.map { CityViewModel(city: $0) }
-                self.filteredCityViewModels = self.cityViewModels
-                
                 DispatchQueue.main.async {
-                    self.loadingActivityIndicatorView.stopAnimating()
+                    cleanUp()
+                    self.cityViewModels = decodedCities.map { CityViewModel(city: $0) }
+                    self.filteredCityViewModels = self.cityViewModels
                 }
             } catch {
                 DispatchQueue.main.async {
+                    cleanUp()
                     self.displayError(message: error.localizedDescription)
                 }
             }
