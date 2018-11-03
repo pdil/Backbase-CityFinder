@@ -1,0 +1,48 @@
+[
+    {
+        "country": "US",
+        "name": "Alabama",
+        "_id": 1,
+        "coord": {
+            "lon": 0,
+            "lat": 0
+        }
+    },
+    {
+        "country": "US",
+        "name": "Albuquerque",
+        "_id": 2,
+        "coord": {
+            "lon": 0,
+            "lat": 0
+        }
+    },
+    {
+        "country": "US",
+        "name": "Anaheim",
+        "_id": 3,
+        "coord": {
+            "lon": 0,
+            "lat": 0
+        }
+    },
+    {
+        "country": "US",
+        "name": "Arizona",
+        "_id": 4,
+        "coord": {
+            "lon": 0,
+            "lat": 0
+        }
+    },
+    {
+        "country": "AU",
+        "name": "Sydney",
+        "_id": 5,
+        "coord": {
+            "lon": 0,
+            "lat": 0
+        }
+    }
+]
+

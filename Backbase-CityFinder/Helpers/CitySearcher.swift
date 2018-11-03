@@ -10,17 +10,19 @@ import Foundation
 
 class CitySearcher {
     
+    typealias SearchCompletionHandler = (_ searchTerm: String, _ results: [City]) -> ()
+    
     // MARK: - Properties
     
     var cities: [City]
-    var searchCompletion: ([City]) -> ()
+    var searchCompletion: SearchCompletionHandler
     
     private var previousSearchText = ""
     private var searchCache = NSCache<NSString, NSArray>()
     
     // MARK: - Initializer
     
-    init(cities: [City], searchCompletion: @escaping ([City]) -> ()) {
+    init(cities: [City], searchCompletion: @escaping SearchCompletionHandler) {
         self.cities = cities
         self.searchCompletion = searchCompletion
     }
@@ -50,7 +52,7 @@ class CitySearcher {
         
         searchCache.setObject(filteredCities as NSArray, forKey: text as NSString)
         
-        searchCompletion(filteredCities)
+        searchCompletion(text, filteredCities)
         
         // Prepare for the next time the search text is updated
         previousSearchText = text

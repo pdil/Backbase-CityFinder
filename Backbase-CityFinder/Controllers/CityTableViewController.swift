@@ -155,7 +155,7 @@ class CityTableViewController: UITableViewController {
         present(alertController, animated: true)
     }
     
-    private func searchResultsUpdated(_ cities: [City]) {
+    private func searchResultsUpdated(_ searchTerm: String, _ cities: [City]) {
         filteredCityViewModels = cities.map { CityViewModel(city: $0) }
     }
     

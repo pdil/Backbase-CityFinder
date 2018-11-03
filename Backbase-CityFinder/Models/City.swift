@@ -6,7 +6,7 @@
 //  Copyright © 2018 Paolo Di Lorenzo. All rights reserved.
 //
 
-struct City: Decodable {
+struct City: Decodable, Equatable {
     var country: String
     var name: String
     var id: Int
@@ -17,7 +17,7 @@ struct City: Decodable {
     }
 }
 
-struct Coord: Decodable {
+struct Coord: Decodable, Equatable {
     var lon: Double
     var lat: Double
 }

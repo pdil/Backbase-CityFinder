@@ -11,7 +11,7 @@ import Foundation
 struct FileProvider {
     
     /// The Bundle from which to retrieve the file.
-    var bundle: Bundle
+    var bundle: BundleProtocol
     
     /// The file's name.
     var fileName: String
@@ -19,7 +19,7 @@ struct FileProvider {
     /// The file's extension.
     var fileExtension: String?
     
-    init(fileName: String, fileExtension: String? = nil, bundle: Bundle = .main) {
+    init(fileName: String, fileExtension: String? = nil, bundle: BundleProtocol = Bundle.main) {
         self.bundle = bundle
         self.fileName = fileName
         self.fileExtension = fileExtension
@@ -40,3 +40,9 @@ struct FileProvider {
     }
     
 }
+
+protocol BundleProtocol {
+    func url(forResource name: String?, withExtension ext: String?) -> URL?
+}
+
+extension Bundle: BundleProtocol {}
