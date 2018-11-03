@@ -15,8 +15,19 @@ class CityListViewController: UITableViewController {
     // MARK: - Properties
     
     private var fileProvider: FileProvider
+    private var citySearcher: CitySearcher?
     
-    private var cityViewModels = [CityViewModel]()
+    private var cityViewModels = [CityViewModel]() {
+        didSet {
+            citySearcher = CitySearcher(cities: cityViewModels.map { $0.city }, searchCompletion: searchResultsUpdated)
+        }
+    }
+    
+    private var filteredCityViewModels = [CityViewModel]() {
+        didSet {
+            DispatchQueue.main.async { self.tableView.reloadData() }
+        }
+    }
     
     // MARK: - Subviews
     
@@ -58,6 +69,17 @@ class CityListViewController: UITableViewController {
         
         navigationController?.isToolbarHidden = false
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: loadingActivityIndicatorView)
+        
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.obscuresBackgroundDuringPresentation = false
+        
+        if #available(iOS 11.0, *) {
+            navigationItem.searchController = searchController
+        } else {
+            tableView.tableHeaderView = searchController.searchBar
+        }
     }
     
     private func fetchData() {
@@ -74,9 +96,9 @@ class CityListViewController: UITableViewController {
                 
                 let decodedCities = try JSONDecoder().decode([City].self, from: data).sorted { $0.name < $1.name }
                 self.cityViewModels = decodedCities.map { CityViewModel(city: $0) }
+                self.filteredCityViewModels = self.cityViewModels
                 
                 DispatchQueue.main.async {
-                    self.tableView.reloadData()
                     self.loadingActivityIndicatorView.stopAnimating()
                 }
             } catch {
@@ -94,10 +116,14 @@ class CityListViewController: UITableViewController {
         present(alertController, animated: true)
     }
     
+    private func searchResultsUpdated(_ cities: [City]) {
+        filteredCityViewModels = cities.map { CityViewModel(city: $0) }
+    }
+    
     // MARK: - UITableViewDelegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedCity = cityViewModels[indexPath.row]
+        let selectedCity = filteredCityViewModels[indexPath.row]
         let mapViewController = MapViewController(city: selectedCity)
         
         navigationController?.pushViewController(mapViewController, animated: true)
@@ -106,17 +132,28 @@ class CityListViewController: UITableViewController {
     // MARK: - UITableViewDataSource
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cityViewModels.count
+        return filteredCityViewModels.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CityListViewController.reuseIdentifier, for: indexPath)
         
-        cell.textLabel?.text = cityViewModels[indexPath.row].displayName
+        cell.textLabel?.text = filteredCityViewModels[indexPath.row].displayName
         
         return cell
     }
 
-
 }
 
+// MARK: - UISearchResultsUpdating
+extension CityListViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text, !searchText.isEmpty {
+            DispatchQueue.global(qos: .userInteractive).async {
+                self.citySearcher?.updateSearch(text: searchText)
+            }
+        } else {
+            self.filteredCityViewModels = self.cityViewModels
+        }
+    }
+}
