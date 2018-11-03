@@ -15,7 +15,7 @@ class MapViewController: UIViewController {
     
     // MARK: - Properties
     
-    var city: City
+    var city: CityViewModel
     
     // MARK: - Subviews
     
@@ -23,7 +23,7 @@ class MapViewController: UIViewController {
     
     // MARK: - Initializer
     
-    init(city: City) {
+    init(city: CityViewModel) {
         self.city = city
         super.init(nibName: nil, bundle: nil)
     }
@@ -37,7 +37,7 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "\(city.name), \(city.country)"
+        title = city.displayName
         toolbarItems = [
             UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
             UIBarButtonItem(title: "Center Map on City", style: .plain, target: self, action: #selector(centerMap)),
@@ -64,8 +64,7 @@ class MapViewController: UIViewController {
     }
     
     @objc private func centerMap() {
-        let cityPoint = CLLocationCoordinate2D(latitude: city.coord.lat, longitude: city.coord.lon)
-        let region = MKCoordinateRegion(center: cityPoint, latitudinalMeters: mapRegionSize, longitudinalMeters: mapRegionSize)
+        let region = MKCoordinateRegion(center: city.coordinates, latitudinalMeters: mapRegionSize, longitudinalMeters: mapRegionSize)
         mapView.setRegion(region, animated: true)
     }
 

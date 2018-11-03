@@ -14,7 +14,7 @@ class CityListViewController: UITableViewController {
 
     private var fileProvider: FileProvider
     
-    private var cities = [City]()
+    private var cities = [CityViewModel]()
     
     // MARK: - Initializer
     
@@ -47,7 +47,8 @@ class CityListViewController: UITableViewController {
                 fatalError("Data not found.")
             }
             
-            cities = try JSONDecoder().decode([City].self, from: data).sorted { $0.name < $1.name }
+            let decodedCities = try JSONDecoder().decode([City].self, from: data).sorted { $0.name < $1.name }
+            cities = decodedCities.map { CityViewModel(city: $0) }
             tableView.reloadData()
         } catch {
             print(error.localizedDescription)
@@ -72,7 +73,7 @@ class CityListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CityListViewController.reuseIdentifier, for: indexPath)
         
-        cell.textLabel?.text = "\(cities[indexPath.row].name), \(cities[indexPath.row].country)"
+        cell.textLabel?.text = cities[indexPath.row].displayName
         
         return cell
     }
