@@ -48,12 +48,6 @@ class CityTableViewCell: UITableViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
 
     // MARK: - Setup
     
@@ -67,14 +61,15 @@ class CityTableViewCell: UITableViewCell {
             flagLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding).isActive = true
         }
         
-        contentView.addSubview(cityLabel)
-        cityLabel.leadingAnchor.constraint(equalTo: flagLabel.trailingAnchor, constant: padding).isActive = true
-        cityLabel.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: -padding).isActive = true
-        cityLabel.centerYAnchor.constraint(equalTo: flagLabel.centerYAnchor).isActive = true
+        let stackView = UIStackView(arrangedSubviews: [cityLabel, coordsLabel])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.spacing = padding / 2
         
-        contentView.addSubview(coordsLabel)
-        coordsLabel.leadingAnchor.constraint(equalTo: cityLabel.leadingAnchor).isActive = true
-        coordsLabel.topAnchor.constraint(equalTo: cityLabel.bottomAnchor).isActive = true
+        contentView.addSubview(stackView)
+        stackView.leadingAnchor.constraint(equalTo: flagLabel.trailingAnchor, constant: padding).isActive = true
+        stackView.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: -padding).isActive = true
+        stackView.centerYAnchor.constraint(equalTo: flagLabel.centerYAnchor).isActive = true
     }
     
 }

@@ -29,12 +29,13 @@ struct CityViewModel {
     
     var displayCoordinates: String {
         // Multiply and divide by 100 while rounding to round to two decimal places
-        return "(\(round(city.coord.lat * 100) / 100), \(round(city.coord.lon * 100) / 100))"
+        return "📍(\(round(city.coord.lat * 100) / 100), \(round(city.coord.lon * 100) / 100))"
     }
     
     func configuredCell(for tableView: UITableView, at indexPath: IndexPath) -> CityTableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CityViewModel.reuseIdentifier, for: indexPath) as! CityTableViewCell
         
+        cell.accessoryType = .disclosureIndicator
         cell.flagLabel.text = displayFlag
         cell.cityLabel.text = displayName
         cell.coordsLabel.text = displayCoordinates
