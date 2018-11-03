@@ -16,6 +16,7 @@
 		523F0E55218BF74A005C5F04 /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 523F0E54218BF74A005C5F04 /* cities.json */; };
 		52E39E86218BFEA300554E7E /* FileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E39E85218BFEA300554E7E /* FileProvider.swift */; };
 		52E39E88218C00F000554E7E /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E39E87218C00F000554E7E /* City.swift */; };
+		52E39E8A218D0A8200554E7E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E39E89218D0A8200554E7E /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		523F0E54218BF74A005C5F04 /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
 		52E39E85218BFEA300554E7E /* FileProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileProvider.swift; sourceTree = "<group>"; };
 		52E39E87218C00F000554E7E /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		52E39E89218D0A8200554E7E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				52E39E87218C00F000554E7E /* City.swift */,
 				523F0E26218BEFFB005C5F04 /* CityListViewController.swift */,
 				52E39E85218BFEA300554E7E /* FileProvider.swift */,
+				52E39E89218D0A8200554E7E /* MapViewController.swift */,
 				523F0E2D218BEFFD005C5F04 /* LaunchScreen.storyboard */,
 				523F0E30218BEFFD005C5F04 /* Info.plist */,
 			);
@@ -265,6 +268,7 @@
 				523F0E27218BEFFB005C5F04 /* CityListViewController.swift in Sources */,
 				523F0E25218BEFFB005C5F04 /* AppDelegate.swift in Sources */,
 				52E39E88218C00F000554E7E /* City.swift in Sources */,
+				52E39E8A218D0A8200554E7E /* MapViewController.swift in Sources */,
 				52E39E86218BFEA300554E7E /* FileProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,6 +439,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UNCTHE43HQ;
 				INFOPLIST_FILE = "Backbase-CityFinder/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -453,6 +458,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UNCTHE43HQ;
 				INFOPLIST_FILE = "Backbase-CityFinder/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

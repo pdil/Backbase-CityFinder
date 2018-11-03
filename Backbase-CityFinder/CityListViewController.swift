@@ -35,8 +35,12 @@ class CityListViewController: UITableViewController {
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: CityListViewController.reuseIdentifier)
         
-        navigationController?.navigationBar.prefersLargeTitles = true
         title = "City Finder"
+        if #available(iOS 11.0, *) {
+            navigationController?.navigationBar.prefersLargeTitles = true
+        }
+        
+        navigationController?.isToolbarHidden = false
         
         do {
             guard let data = try fileProvider.contents() else {
@@ -51,6 +55,13 @@ class CityListViewController: UITableViewController {
     }
     
     // MARK: - UITableViewDelegate
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedCity = cities[indexPath.row]
+        
+        let mapViewController = MapViewController(city: selectedCity)
+        navigationController?.pushViewController(mapViewController, animated: true)
+    }
     
     // MARK: - UITableViewDataSource
     
