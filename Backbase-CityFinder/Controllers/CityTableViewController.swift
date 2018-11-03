@@ -1,5 +1,5 @@
 //
-//  CityListViewController.swift
+//  CityTableViewController.swift
 //  Backbase-CityFinder
 //
 //  Created by Paolo Di Lorenzo on 11/1/18.
@@ -8,9 +8,7 @@
 
 import UIKit
 
-class CityListViewController: UITableViewController {
-    
-    private static var reuseIdentifier = "cityListTableViewCell"
+class CityTableViewController: UITableViewController {
 
     // MARK: - Properties
     
@@ -53,7 +51,9 @@ class CityListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: CityListViewController.reuseIdentifier)
+        tableView.register(CityTableViewCell.self, forCellReuseIdentifier: CityViewModel.reuseIdentifier)
+        tableView.estimatedRowHeight = 64
+        tableView.rowHeight = UITableView.automaticDimension
         
         setupNavigationBar()
         fetchData()
@@ -136,17 +136,13 @@ class CityListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CityListViewController.reuseIdentifier, for: indexPath)
-        
-        cell.textLabel?.text = filteredCityViewModels[indexPath.row].displayName
-        
-        return cell
+        return filteredCityViewModels[indexPath.row].configuredCell(for: tableView, at: indexPath)
     }
 
 }
 
 // MARK: - UISearchResultsUpdating
-extension CityListViewController: UISearchResultsUpdating {
+extension CityTableViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         if let searchText = searchController.searchBar.text, !searchText.isEmpty {
             DispatchQueue.global(qos: .userInteractive).async {
