@@ -17,21 +17,11 @@ class CityTableViewController: UITableViewController {
     
     private var cityViewModels = [CityViewModel]() {
         didSet {
-            let countLabel = UILabel()
-            countLabel.font = .boldSystemFont(ofSize: 14)
-            
-            let formatter = NumberFormatter()
-            formatter.numberStyle = .decimal
-            
-            if let formattedCount = formatter.string(from: NSNumber(value: cityViewModels.count)) {
-                countLabel.text = "Displaying \(formattedCount) cities"
-            }
-            
-            toolbarItems = [
+            setToolbarItems([
                 UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
-                UIBarButtonItem(customView: countLabel),
+                UIBarButtonItem(customView: CityCountLabel(count: cityViewModels.count)),
                 UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-            ]
+            ], animated: true)
             
             citySearcher = CitySearcher(cities: cityViewModels.map { $0.city }, searchCompletion: searchResultsUpdated)
         }
@@ -49,6 +39,15 @@ class CityTableViewController: UITableViewController {
         let indicatorView = UIActivityIndicatorView(style: .gray)
         indicatorView.hidesWhenStopped = true
         return indicatorView
+    }()
+    
+    private lazy var searchController: UISearchController = {
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.obscuresBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        return searchController
     }()
     
     // MARK: - Initializer
@@ -91,17 +90,12 @@ class CityTableViewController: UITableViewController {
         navigationController?.isToolbarHidden = false
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: loadingActivityIndicatorView)
         
-        let searchController = UISearchController(searchResultsController: nil)
-        searchController.searchResultsUpdater = self
-        searchController.hidesNavigationBarDuringPresentation = false
-        searchController.obscuresBackgroundDuringPresentation = false
-        definesPresentationContext = true
-        
         if #available(iOS 11.0, *) {
             navigationItem.searchController = searchController
             navigationItem.hidesSearchBarWhenScrolling = false
         } else {
             tableView.tableHeaderView = searchController.searchBar
+            tableView.keyboardDismissMode = .onDrag
         }
     }
     
