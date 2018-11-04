@@ -29,7 +29,7 @@ class Backbase_CityFinderUITests: XCTestCase {
         let testCity = "Anaheim, US"
         let cell = app.tables.containing(.table, identifier: "cityListTableView").cells.staticTexts[testCity]
         
-        cell.tap()
+        cell.forceTap()
         
         XCTAssertTrue(app.navigationBars[testCity].exists)
     }
@@ -37,6 +37,7 @@ class Backbase_CityFinderUITests: XCTestCase {
     func testSearchingForCityAndSelectingIt() {
         let app = XCUIApplication()
         
+        let testCity = "Albuquerque, US"
         let searchBar = app.searchFields.element
         let tableView = app.tables.containing(.table, identifier: "cityListTableView")
         
@@ -48,10 +49,10 @@ class Backbase_CityFinderUITests: XCTestCase {
         searchBar.typeText("b")
         XCTAssertEqual(tableView.cells.count, 1)
         
-        let cell = tableView.cells.staticTexts["Albuquerque, US"]
-        cell.tap()
+        let cell = tableView.cells.staticTexts[testCity]
+        cell.forceTap()
         
-        let mapNavigationBar = app.navigationBars["Albuquerque, US"]
+        let mapNavigationBar = app.navigationBars[testCity]
         XCTAssertTrue(mapNavigationBar.exists)
         
         // Tap back button in navigation bar to go back to city list
@@ -74,4 +75,23 @@ class Backbase_CityFinderUITests: XCTestCase {
         XCTAssertTrue(alert.exists)
     }
 
+}
+
+/// Tests that involve tapping on a cell when searching the table view sometimes fail because
+/// the search controller transparently obscures the cell (and the cell appears "non-hittable",
+/// even though it would be tappable to a normal user.
+///
+/// The method in this example executes a tap at a specific coordinate if this is the case,
+/// which allows the test to progress.
+///
+/// Adapted from: https://stackoverflow.com/a/33534187/7264964
+extension XCUIElement {
+    func forceTap() {
+        if isHittable {
+            tap()
+        } else {
+            let coordinate = self.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0))
+            coordinate.tap()
+        }
+    }
 }

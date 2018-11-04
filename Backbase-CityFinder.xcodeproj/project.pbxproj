@@ -21,6 +21,7 @@
 		5295DB33218E674500D72DEB /* test_cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 5295DB30218E219500D72DEB /* test_cities.json */; };
 		52B240DF218D3D1800D83B83 /* CityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B240DE218D3D1800D83B83 /* CityViewModel.swift */; };
 		52B240E7218D4B4800D83B83 /* CitySearcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B240E6218D4B4800D83B83 /* CitySearcher.swift */; };
+		52CEE88D218E754F00E73555 /* CityCountLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CEE88C218E754F00E73555 /* CityCountLabel.swift */; };
 		52E39E86218BFEA300554E7E /* FileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E39E85218BFEA300554E7E /* FileProvider.swift */; };
 		52E39E88218C00F000554E7E /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E39E87218C00F000554E7E /* City.swift */; };
 		52E39E8A218D0A8200554E7E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E39E89218D0A8200554E7E /* MapViewController.swift */; };
@@ -63,6 +64,7 @@
 		5295DB30218E219500D72DEB /* test_cities.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = test_cities.json; sourceTree = "<group>"; };
 		52B240DE218D3D1800D83B83 /* CityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModel.swift; sourceTree = "<group>"; };
 		52B240E6218D4B4800D83B83 /* CitySearcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearcher.swift; sourceTree = "<group>"; };
+		52CEE88C218E754F00E73555 /* CityCountLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCountLabel.swift; sourceTree = "<group>"; };
 		52E39E85218BFEA300554E7E /* FileProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileProvider.swift; sourceTree = "<group>"; };
 		52E39E87218C00F000554E7E /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		52E39E89218D0A8200554E7E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 		52B240E5218D446A00D83B83 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				52CEE88C218E754F00E73555 /* CityCountLabel.swift */,
 				5295DB2A218D6B1700D72DEB /* CityTableViewCell.swift */,
 			);
 			path = Views;
@@ -323,6 +326,7 @@
 				5295DB2D218D757D00D72DEB /* EmojiFlags.swift in Sources */,
 				523F0E25218BEFFB005C5F04 /* AppDelegate.swift in Sources */,
 				52E39E88218C00F000554E7E /* City.swift in Sources */,
+				52CEE88D218E754F00E73555 /* CityCountLabel.swift in Sources */,
 				52E39E8A218D0A8200554E7E /* MapViewController.swift in Sources */,
 				52E39E86218BFEA300554E7E /* FileProvider.swift in Sources */,
 				5295DB2B218D6B1700D72DEB /* CityTableViewCell.swift in Sources */,
@@ -425,7 +429,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -480,7 +484,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

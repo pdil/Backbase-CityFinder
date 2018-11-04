@@ -42,6 +42,8 @@ class Backbase_CityFinderTests: XCTestCase {
         // Test view model provides correct cell configuration
         
         let tableView = UITableView()
+        let dataSource = MockDataSource()
+        tableView.dataSource = dataSource
         tableView.register(CityTableViewCell.self, forCellReuseIdentifier: CityViewModel.reuseIdentifier)
         
         let cell = cityViewModel.configuredCell(for: tableView, at: IndexPath(row: 0, section: 0))
