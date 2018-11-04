@@ -6,6 +6,7 @@
 //  Copyright © 2018 Paolo Di Lorenzo. All rights reserved.
 //
 
+/// Structure representing a city, loading from cities.json
 struct City: Decodable, Equatable {
     var country: String
     var name: String
@@ -17,6 +18,7 @@ struct City: Decodable, Equatable {
     }
 }
 
+/// Structure representing a set of coordinates for a city
 struct Coord: Decodable, Equatable {
     var lon: Double
     var lat: Double

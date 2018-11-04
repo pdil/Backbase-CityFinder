@@ -78,10 +78,10 @@ class Backbase_CityFinderUITests: XCTestCase {
 }
 
 /// Tests that involve tapping on a cell when searching the table view sometimes fail because
-/// the search controller transparently obscures the cell (and the cell appears "non-hittable",
+/// the search controller transparently obscures the cell (and the cell appears "non-hittable"),
 /// even though it would be tappable to a normal user.
 ///
-/// The method in this example executes a tap at a specific coordinate if this is the case,
+/// The method in this extension executes a tap at a specific coordinate if this is the case,
 /// which allows the test to progress.
 ///
 /// Adapted from: https://stackoverflow.com/a/33534187/7264964

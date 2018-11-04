@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             citiesFileProvider = FileProvider(fileName: "cities", fileExtension: "json")
         }
         
+        // Setup the window and initial view controller
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = UINavigationController(rootViewController: CityTableViewController(fileProvider: citiesFileProvider))
         window?.makeKeyAndVisible()

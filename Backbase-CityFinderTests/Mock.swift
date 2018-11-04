@@ -9,7 +9,7 @@
 import UIKit
 @testable import Backbase_CityFinder
 
-
+/// Mock bundle that allows for dependency injection into FileProvider while testing
 class MockBundle: BundleProtocol {
     
     func url(forResource name: String?, withExtension ext: String?) -> URL? {
@@ -18,7 +18,9 @@ class MockBundle: BundleProtocol {
     
 }
 
-
+/// Mock data source to use with the table view for testing. In some situations, an
+/// error could be thrown if a data source was not set on the table view while dequeuing cells
+/// (as is done in `CityViewModel`).
 class MockDataSource: NSObject, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

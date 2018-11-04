@@ -73,6 +73,7 @@ class CityTableViewController: UITableViewController {
     
     // MARK: - Convenience
     
+    /// Configures the table view
     private func setupTableView() {
         tableView.accessibilityIdentifier = "cityListTableView"
         tableView.register(CityTableViewCell.self, forCellReuseIdentifier: CityViewModel.reuseIdentifier)
@@ -81,6 +82,7 @@ class CityTableViewController: UITableViewController {
         tableView.tableFooterView = UIView()            // remove empty cell separator lines
     }
     
+    /// Configures the navigation bar
     private func setupNavigationBar() {
         title = "City Finder"
         if #available(iOS 11.0, *) {
@@ -99,6 +101,7 @@ class CityTableViewController: UITableViewController {
         }
     }
     
+    /// Fetches data from the file provider to be displayed in the table view.
     private func fetchData() {
         func cleanUp() {
             navigationItem.prompt = nil
@@ -119,6 +122,9 @@ class CityTableViewController: UITableViewController {
                     return
                 }
                 
+                // Cities are stored in a sorted flat array of view models.
+                // This representation allows the creation and filtering of this array to be
+                // much simpler and easier, with quick filtering handled by the `CitySearcher` object.
                 let decodedCities = try JSONDecoder().decode([City].self, from: data).sorted {
                     // If names are not the same, sort by city name.
                     if $0.name != $1.name {
@@ -143,6 +149,11 @@ class CityTableViewController: UITableViewController {
         }
     }
     
+    /**
+     Displays an error alert to the user as a `UIAlertController`.
+     
+     - parameter message: The message to be displayed to the user as an error.
+    */
     private func displayError(message: String) {
         let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         let dismissAction = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
@@ -150,6 +161,12 @@ class CityTableViewController: UITableViewController {
         present(alertController, animated: true)
     }
     
+    /**
+     Completion handler called by `CitySearcher` whenever a new search term is provided to it.
+     
+     - parameter searchTerm: The search term that was used to produce the provided array of cities.
+     - parameter cities: The array of cities that match the provided `searchTerm`.
+    */
     private func searchResultsUpdated(_ searchTerm: String, _ cities: [City]) {
         filteredCityViewModels = cities.map { CityViewModel(city: $0) }
     }
@@ -179,8 +196,9 @@ class CityTableViewController: UITableViewController {
 extension CityTableViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         if let searchText = searchController.searchBar.text, !searchText.isEmpty {
+            // `.userInteractive` quality of service is used to provide the most responsive experience
             DispatchQueue.global(qos: .userInteractive).async {
-                self.citySearcher?.updateSearch(text: searchText)
+                self.citySearcher?.updateSearch(term: searchText)
             }
         } else {
             self.filteredCityViewModels = self.cityViewModels

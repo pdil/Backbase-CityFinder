@@ -51,6 +51,7 @@ class MapViewController: UIViewController {
     
     // MARK: - Convenience
     
+    /// Configures the map view
     private func setupMapView() {
         mapView = MKMapView()
         guard let mapView = mapView else { return }
@@ -63,6 +64,7 @@ class MapViewController: UIViewController {
         mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     
+    /// Centers the map on the coordinates provided by the `CityViewModel`.
     @objc private func centerMap() {
         let region = MKCoordinateRegion(center: city.coordinates, latitudinalMeters: mapRegionSize, longitudinalMeters: mapRegionSize)
         mapView?.setRegion(region, animated: true)

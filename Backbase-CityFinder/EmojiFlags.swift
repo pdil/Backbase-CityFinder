@@ -6,6 +6,10 @@
 //  Copyright © 2018 Paolo Di Lorenzo. All rights reserved.
 //
 
+/// Dictionary of country codes and matching emoji flag,
+/// to be displayed in the user interface. The table was obtained
+/// from https://apps.timwhitlock.info/emoji/tables/iso3166 and copied
+/// into Excel, then converted to this Swift dictionary representation.
 let emojiFlags = [
     "AD": "🇦🇩",
     "AE": "🇦🇪",

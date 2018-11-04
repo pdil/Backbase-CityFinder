@@ -41,6 +41,8 @@ struct FileProvider {
     
 }
 
+/// Protocol defining the `Bundle` method(s) used in `FileProvider`.
+/// This protocol allows for the creation of mock bundles to be used in testing.
 protocol BundleProtocol {
     func url(forResource name: String?, withExtension ext: String?) -> URL?
 }

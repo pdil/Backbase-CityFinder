@@ -56,6 +56,8 @@ class Backbase_CityFinderTests: XCTestCase {
     func testCityLoading() {
         let fileProvider = FileProvider(fileName: "test_cities", fileExtension: "json", bundle: MockBundle())
         
+        // Test file provider produces non-nil contents without errors
+        
         XCTAssertNoThrow(try fileProvider.contents())
         XCTAssertNotNil(try fileProvider.contents())
         
@@ -71,6 +73,8 @@ class Backbase_CityFinderTests: XCTestCase {
     }
     
     func testCitySearch() {
+        // For each new character insertion or removal, check to see if the correct array of filtered test cities is produced.
+        
         let citySearcher = CitySearcher(cities: testCitiesArray) { searchTerm, cities in
             switch searchTerm {
             case "a":
@@ -86,15 +90,15 @@ class Backbase_CityFinderTests: XCTestCase {
             }
         }
         
-        citySearcher.updateSearch(text: "a")
-        citySearcher.updateSearch(text: "al")
-        citySearcher.updateSearch(text: "alb")
+        citySearcher.updateSearch(term: "a")
+        citySearcher.updateSearch(term: "al")
+        citySearcher.updateSearch(term: "alb")
         
         // Test deleting of characters to see if cache works.
-        citySearcher.updateSearch(text: "al")
-        citySearcher.updateSearch(text: "a")
+        citySearcher.updateSearch(term: "al")
+        citySearcher.updateSearch(term: "a")
         
-        citySearcher.updateSearch(text: "s")
+        citySearcher.updateSearch(term: "s")
     }
     
     func testCitySearchIsNotCaseSensitive() {
@@ -113,10 +117,10 @@ class Backbase_CityFinderTests: XCTestCase {
             }
         }
         
-        citySearcher.updateSearch(text: "a")
-        citySearcher.updateSearch(text: "aL")
-        citySearcher.updateSearch(text: "Alb")
-        citySearcher.updateSearch(text: "s")
+        citySearcher.updateSearch(term: "a")
+        citySearcher.updateSearch(term: "aL")
+        citySearcher.updateSearch(term: "Alb")
+        citySearcher.updateSearch(term: "s")
     }
 
 }
