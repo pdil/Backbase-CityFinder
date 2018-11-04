@@ -75,6 +75,7 @@ class CityTableViewController: UITableViewController {
     // MARK: - Convenience
     
     private func setupTableView() {
+        tableView.accessibilityIdentifier = "cityListTableView"
         tableView.register(CityTableViewCell.self, forCellReuseIdentifier: CityViewModel.reuseIdentifier)
         tableView.estimatedRowHeight = 64
         tableView.rowHeight = UITableView.automaticDimension

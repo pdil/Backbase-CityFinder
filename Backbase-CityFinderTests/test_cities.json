@@ -36,9 +36,18 @@
         }
     },
     {
-        "country": "AU",
+        "country": "CA",
         "name": "Sydney",
         "_id": 5,
+        "coord": {
+            "lon": 0,
+            "lat": 0
+        }
+    },
+    {
+        "country": "AU",
+        "name": "Sydney",
+        "_id": 6,
         "coord": {
             "lon": 0,
             "lat": 0

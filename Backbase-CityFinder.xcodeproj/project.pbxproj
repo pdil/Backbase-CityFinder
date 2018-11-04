@@ -18,6 +18,7 @@
 		5295DB2D218D757D00D72DEB /* EmojiFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5295DB2C218D757D00D72DEB /* EmojiFlags.swift */; };
 		5295DB2F218E204D00D72DEB /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5295DB2E218E204D00D72DEB /* Mock.swift */; };
 		5295DB31218E219500D72DEB /* test_cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 5295DB30218E219500D72DEB /* test_cities.json */; };
+		5295DB33218E674500D72DEB /* test_cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 5295DB30218E219500D72DEB /* test_cities.json */; };
 		52B240DF218D3D1800D83B83 /* CityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B240DE218D3D1800D83B83 /* CityViewModel.swift */; };
 		52B240E7218D4B4800D83B83 /* CitySearcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B240E6218D4B4800D83B83 /* CitySearcher.swift */; };
 		52E39E86218BFEA300554E7E /* FileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E39E85218BFEA300554E7E /* FileProvider.swift */; };
@@ -288,6 +289,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5295DB33218E674500D72DEB /* test_cities.json in Resources */,
 				523F0E55218BF74A005C5F04 /* cities.json in Resources */,
 				523F0E2F218BEFFD005C5F04 /* LaunchScreen.storyboard in Resources */,
 				523F0E2C218BEFFD005C5F04 /* Assets.xcassets in Resources */,

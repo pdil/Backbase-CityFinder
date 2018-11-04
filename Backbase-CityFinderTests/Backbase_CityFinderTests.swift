@@ -22,7 +22,8 @@ class Backbase_CityFinderTests: XCTestCase {
             City(country: "US", name: "Albuquerque", id: 2, coord: Coord(lon: 0, lat: 0)),
             City(country: "US", name: "Anaheim", id: 3, coord: Coord(lon: 0, lat: 0)),
             City(country: "US", name: "Arizona", id: 4, coord: Coord(lon: 0, lat: 0)),
-            City(country: "AU", name: "Sydney", id: 5, coord: Coord(lon: 0, lat: 0))
+            City(country: "CA", name: "Sydney", id: 5, coord: Coord(lon: 0, lat: 0)),
+            City(country: "AU", name: "Sydney", id: 6, coord: Coord(lon: 0, lat: 0))
         ]
     }
 
@@ -77,7 +78,7 @@ class Backbase_CityFinderTests: XCTestCase {
             case "alb":
                 XCTAssertEqual(cities.map { $0.name }, ["Albuquerque"])
             case "s":
-                XCTAssertEqual(cities.map { $0.name }, ["Sydney"])
+                XCTAssertEqual(cities.map { $0.name }, ["Sydney", "Sydney"])
             default:
                 break
             }
@@ -104,7 +105,7 @@ class Backbase_CityFinderTests: XCTestCase {
             case "alb":
                 XCTAssertEqual(cities.map { $0.name }, ["Albuquerque"])
             case "s":
-                XCTAssertEqual(cities.map { $0.name }, ["Sydney"])
+                XCTAssertEqual(cities.map { $0.name }, ["Sydney", "Sydney"])
             default:
                 break
             }
